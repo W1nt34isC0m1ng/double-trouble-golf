@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order confirmed — DoubleTrouble Golf</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">
+      <span class="logo-balls" aria-hidden="true"><span class="logo-ball"></span><span class="logo-ball"></span></span>
+      DoubleTrouble<span class="wordmark-accent">Golf</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="hero-kicker">Payment received</p>
+      <h1>Thanks for your order! 🏌️</h1>
+      <p class="hero-sub">Your payment went through and your golf balls are heading your way. We ship anywhere in the continental US, free. You'll get a confirmation at the email you used at checkout, and we'll send tracking once your order is on its way.</p>
+      <a class="btn btn-primary" href="index.html">Back to the shop</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>DoubleTrouble Golf</strong> — twice the balls, half the price.</p>
+  </footer>
+
+  <script>
+    // The order is paid — clear the saved cart so it doesn't linger.
+    try { localStorage.removeItem("dtg-cart"); } catch (e) {}
+  </script>
+</body>
+</html>

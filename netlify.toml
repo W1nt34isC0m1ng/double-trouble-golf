@@ -1,0 +1,11 @@
+# Netlify configuration for DoubleTrouble Golf.
+# The site is plain static files (no build), plus one serverless function for
+# Stripe checkout. Netlify bundles the function (and its `stripe` dependency)
+# automatically on each deploy.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"

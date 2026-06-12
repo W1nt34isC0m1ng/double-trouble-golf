@@ -539,6 +539,17 @@ h1, h2, h3 { line-height: 1.15; }
 
 .cart-note { margin: 0.7rem 0 0; font-size: 0.8rem; color: #6a7a6f; }
 
+.checkout-error {
+  display: none;
+  margin: 0.6rem 0 0;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  background: #fcdcd5;
+  color: #99311f;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
 /* ---------- Mobile ---------- */
 
 @media (max-width: 640px) {

@@ -125,3 +125,10 @@ const PRODUCTS = [
     accent: "#3aa6a0",
   },
 ];
+
+// Let the checkout serverless function import this same list in Node, so the
+// price a customer is charged always matches the price shown in the shop.
+// (Ignored by the browser, which loads this file as a plain <script>.)
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = PRODUCTS;
+}

@@ -217,29 +217,46 @@ function closeCart() {
 
 // ---------- Checkout ----------
 
-function buildOrderBody() {
-  const lines = ["Hi DoubleTrouble Golf! I'd like to order:", ""];
-  for (const [id, qty] of Object.entries(cart)) {
-    const p = productById(id);
-    lines.push(
-      `- ${qty} dozen ${p.brand} ${p.name} (${p.grade}) — $${p.pricePerDozen * qty}`
-    );
+const CHECKOUT_ENDPOINT = "/.netlify/functions/create-checkout";
+
+function setCheckoutError(message) {
+  let el = document.getElementById("checkout-error");
+  if (!el) {
+    el = document.createElement("p");
+    el.id = "checkout-error";
+    el.className = "checkout-error";
+    document.getElementById("checkout-btn").insertAdjacentElement("afterend", el);
   }
-  lines.push("", `Total: $${cartTotal()}`, "");
-  lines.push("My name: ");
-  lines.push("Pickup or delivery? ");
-  lines.push("", "Thanks!");
-  return lines.join("\n");
+  el.textContent = message || "";
+  el.style.display = message ? "block" : "none";
 }
 
-function checkout() {
+async function checkout() {
   if (cartCount() === 0) return;
-  const subject = "Golf ball order — DoubleTrouble Golf";
-  const url =
-    `mailto:${ORDER_EMAIL}` +
-    `?subject=${encodeURIComponent(subject)}` +
-    `&body=${encodeURIComponent(buildOrderBody())}`;
-  window.location.href = url;
+
+  const btn = document.getElementById("checkout-btn");
+  const originalLabel = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "Starting checkout…";
+  setCheckoutError("");
+
+  try {
+    const res = await fetch(CHECKOUT_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: cart }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.url) {
+      throw new Error(data.error || "Checkout failed");
+    }
+    // Hand off to Stripe's hosted payment page.
+    window.location.href = data.url;
+  } catch (err) {
+    setCheckoutError("Sorry — checkout couldn't start. Please try again.");
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+  }
 }
 
 // ---------- Init ----------

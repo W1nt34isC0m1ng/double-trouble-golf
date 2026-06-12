@@ -44,38 +44,73 @@ this:
 
 Refresh the page in your browser to see the changes.
 
-## Set the real order email (important!)
+## The contact email
 
-Orders are sent to the address at the top of **`js/app.js`**:
+The footer contact link uses the address at the top of **`js/app.js`**:
 
 ```js
-const ORDER_EMAIL = "orders@doubletroublegolf.example";
+const ORDER_EMAIL = "orders@doubletroublegolf.com";
 ```
 
-Change it to the real business email (a parent-supervised inbox is a good
-idea) before sharing the site.
+This is just the "email us" link in the footer — orders themselves are paid by
+card through Stripe (see below), not by email.
 
-## Put it on the internet for free
+## Card checkout with Stripe
 
-### Option A: Netlify Drop (easiest, ~2 minutes)
+Customers add golf balls to the cart and pay by card. Card details are entered
+on Stripe's own secure page — they never touch this website — and shipping is
+free anywhere in the continental US (the cost is built into the per-dozen
+prices). When someone checks out:
 
-1. Go to <https://app.netlify.com/drop>
-2. Drag this whole folder onto the page.
-3. That's it — Netlify gives you a link like `something.netlify.app`.
-   Create a free account to keep the site and rename the link.
+1. The browser sends the cart (product ids + quantities) to a small serverless
+   function, `netlify/functions/create-checkout.js`.
+2. That function prices the order from `js/products.js` on the server (so the
+   price charged always matches the shop) and asks Stripe to create a checkout
+   page.
+3. The customer is sent to Stripe to pay, then back to `success.html`.
 
-### Option B: GitHub Pages
+### One-time Stripe setup (a parent must do this)
 
-1. Create a free account at <https://github.com> (a parent should do this).
-2. Create a new repository called `double-trouble-golf` and upload these
-   files (or `git push` if you're comfortable with git).
-3. In the repo: **Settings → Pages → Source: Deploy from a branch**, pick
-   `main` and `/ (root)`, save.
-4. After a minute the site is live at
-   `https://<your-username>.github.io/double-trouble-golf/`.
+Stripe requires an account holder who is 18+, so **a parent owns the Stripe
+account**; the twins run the shop.
 
-Either way, updating the site later = edit `js/products.js` and re-upload
-(or re-drag, or re-push).
+1. Create a free account at <https://stripe.com>.
+2. In the Stripe Dashboard, go to **Developers → API keys** and copy the
+   **Secret key** (starts with `sk_`). Keep it private — it can move money.
+3. Add it to Netlify (see deploy step below) as an environment variable named
+   `STRIPE_SECRET_KEY`. **Never put this key in the website files or commit it
+   to git.**
+4. Test with Stripe in **test mode** first using card `4242 4242 4242 4242`,
+   any future expiry, any CVC. Flip Stripe to live mode when you're ready for
+   real orders.
+
+## Put it on the internet
+
+Because of the Stripe checkout function, the site needs Netlify's
+**git-connected deploys** (drag-and-drop can't run the function). One-time
+setup:
+
+1. Create a free account at <https://github.com> (a parent should do this) and
+   push this project to a new repository called `double-trouble-golf`.
+2. At <https://app.netlify.com>, **Add new project → Import an existing
+   project**, pick the GitHub repo, and deploy (no build command needed — the
+   `netlify.toml` already tells Netlify what to do).
+3. In Netlify, go to **Site configuration → Environment variables** and add
+   `STRIPE_SECRET_KEY` with the secret key from Stripe.
+4. Trigger a redeploy so the key takes effect.
+
+After this, **updating the site = `git push`** — Netlify rebuilds and
+redeploys automatically. (The custom domain `doubletroublegolf.com` is already
+pointed at this Netlify project.)
+
+## Running and testing locally
+
+- Preview the pages: `python3 -m http.server 8000`, then open
+  <http://localhost:8000>. (The checkout button needs the function, so it won't
+  complete a payment from this simple preview.)
+- Test the full checkout locally: install the Netlify CLI (`npm i -g
+  netlify-cli`), then `STRIPE_SECRET_KEY=sk_test_... netlify dev`.
+- Run the automated tests: `npm test`.
 
 ## What's where
 
@@ -84,4 +119,8 @@ Either way, updating the site later = edit `js/products.js` and re-upload
 | `index.html` | All the words and page sections |
 | `css/style.css` | All the colors and layout |
 | `js/products.js` | **The product list — the file you'll edit most** |
-| `js/app.js` | Shop grid, filters, cart, and the order email button |
+| `js/app.js` | Shop grid, filters, cart, and the checkout button |
+| `netlify/functions/create-checkout.js` | Creates the Stripe payment page |
+| `netlify/functions/lib/cart.js` | Prices the cart (shared, tested logic) |
+| `success.html` / `cancel.html` | Shown after paying / cancelling |
+| `netlify.toml`, `package.json` | Tell Netlify how to build the function |
