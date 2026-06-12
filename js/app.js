@@ -2,7 +2,7 @@
 // DoubleTrouble Golf — shop & cart logic
 //
 // >>> CHANGE THIS to the real business email before going live! <<<
-const ORDER_EMAIL = "orders@doubletroublegolf.example";
+const ORDER_EMAIL = "orders@doubletroublegolf.com";
 // ============================================================
 
 const CART_KEY = "dtg-cart";
