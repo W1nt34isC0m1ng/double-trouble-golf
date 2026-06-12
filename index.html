@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoubleTrouble Golf — Used Golf Balls, Twice the Value</title>
+  <meta name="description" content="Quality used golf balls recovered, cleaned, and graded by hand. Run by twins. Twice the balls, half the price.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="wordmark" href="#hero">
+      <span class="logo-balls" aria-hidden="true"><span class="logo-ball"></span><span class="logo-ball"></span></span>
+      DoubleTrouble<span class="wordmark-accent">Golf</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#shop">Shop</a>
+      <a href="#grading">Grading</a>
+      <a href="#story">Our Story</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button id="cart-btn" class="cart-btn" aria-label="Open cart">
+      🛒 Cart <span id="cart-count" class="cart-count">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <p class="hero-kicker">Recovered • Cleaned • Graded by hand</p>
+      <h1>Twice the balls.<br>Half the price.</h1>
+      <p class="hero-sub">We're twins who rescue golf balls from ponds, woods, and weeds, scrub them till they shine, and sell them for way less than new. Your wallet (and the water hazard) will thank you.</p>
+      <a class="btn btn-primary" href="#shop">Shop golf balls</a>
+    </section>
+
+    <section id="shop" class="section">
+      <h2>The Ball Shop</h2>
+      <p class="section-sub">All prices are per dozen. Every ball is washed, inspected, and graded by us personally.</p>
+      <div class="filter-bar">
+        <label>Brand
+          <select id="brand-filter">
+            <option value="All">All brands</option>
+            <option value="Titleist">Titleist</option>
+            <option value="Callaway">Callaway</option>
+            <option value="TaylorMade">TaylorMade</option>
+            <option value="Bridgestone">Bridgestone</option>
+            <option value="Srixon">Srixon</option>
+            <option value="Mixed">Mixed packs</option>
+          </select>
+        </label>
+        <label>Condition
+          <select id="grade-filter">
+            <option value="All">All grades</option>
+            <option value="Mint">Mint</option>
+            <option value="Near Mint">Near Mint</option>
+            <option value="Good">Good</option>
+          </select>
+        </label>
+      </div>
+      <div id="product-grid" class="product-grid"></div>
+    </section>
+
+    <section id="grading" class="section section-alt">
+      <h2>How We Grade</h2>
+      <p class="section-sub">We sort every single ball by hand. No robots. Just two very picky 12-year-olds.</p>
+      <div class="grade-cards">
+        <div class="grade-card">
+          <span class="grade-badge grade-mint">Mint</span>
+          <h3>Like new</h3>
+          <p>Looks like it rolled straight out of the sleeve. No scuffs, no marks, full shine. Honestly, the person who lost it probably only hit it once.</p>
+        </div>
+        <div class="grade-card">
+          <span class="grade-badge grade-near-mint">Near Mint</span>
+          <h3>Barely played</h3>
+          <p>Might have a tiny scuff or a faded logo if you look really closely. Plays exactly like new — your score won't know the difference.</p>
+        </div>
+        <div class="grade-card">
+          <span class="grade-badge grade-good">Good</span>
+          <h3>Plays great</h3>
+          <p>Some visible scuffs or pen marks, but round, solid, and ready for action. Perfect for practice or for holes with a lot of water.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section">
+      <h2>Meet the Trouble</h2>
+      <div class="story-grid">
+        <div class="story-balls" aria-hidden="true">
+          <div class="big-ball"></div>
+          <div class="big-ball"></div>
+        </div>
+        <div class="story-text">
+          <p>We're 12-year-old twins who love golf — and noticed something: golfers lose a <em>lot</em> of balls. Perfectly good ones! So we started rescuing them.</p>
+          <p>Every weekend we hunt the ponds, trees, and tall grass at our local courses (with permission!). Then we wash every ball, sort them by brand, and grade them honestly. If we wouldn't play it, we don't sell it.</p>
+          <p>Why "DoubleTrouble"? Because there are two of us, we find balls twice as fast, and our parents say the name fits.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section section-alt">
+      <h2>How Ordering Works</h2>
+      <ol class="how-steps">
+        <li><strong>Pick your balls.</strong> Add whatever you want to your cart — everything is sold by the dozen.</li>
+        <li><strong>Send your order.</strong> Hit "Place order" and your email app opens with your order ready to send. Add your name and how you'd like to get your balls.</li>
+        <li><strong>Pay when you get them.</strong> We'll reply to set up local pickup or delivery, and you pay then — cash is king. No online payment, no credit cards, no worries.</li>
+      </ol>
+    </section>
+
+    <section id="faq" class="section">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Are used golf balls actually any good?</summary>
+        <p>Yes! Studies (and our own backyard testing) show a clean, undamaged used ball performs basically the same as a new one. The only difference is the price.</p>
+      </details>
+      <details>
+        <summary>Where do the balls come from?</summary>
+        <p>Local courses near us — ponds, woods, and out-of-bounds areas. We always get permission from the course first.</p>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <p>When you pick up your order (or we deliver it locally), you pay in person — cash preferred. We don't take online payments.</p>
+      </details>
+      <details>
+        <summary>Can I buy fewer than a dozen?</summary>
+        <p>Right now everything is sold by the dozen — it keeps things simple for us. Mention it in your order email if you want something special and we'll see what we can do.</p>
+      </details>
+      <details>
+        <summary>What if I'm not happy with my balls?</summary>
+        <p>Tell us! If a ball isn't as good as the grade we gave it, we'll swap it for free. We grade honestly because we want you back.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>DoubleTrouble Golf</strong> — twice the balls, half the price.</p>
+    <p>Questions or orders: <a id="footer-email" href="#">email us</a></p>
+    <p class="footer-fineprint">A kid-run business, proudly supervised by parents.</p>
+  </footer>
+
+  <div id="cart-overlay" class="cart-overlay" hidden></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cart-close" class="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <p class="cart-total-row">Total: <strong id="cart-total">$0</strong></p>
+      <button id="checkout-btn" class="btn btn-primary btn-block" disabled>Place order by email</button>
+      <p class="cart-note">This opens your email app with the order written out — just hit send. You pay at pickup or delivery.</p>
+    </div>
+  </aside>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
