@@ -148,7 +148,13 @@ for (const { p, slug } of entries) {
 }
 
 // --- sitemap.xml ---
-const urls = [`${SITE}/`, ...entries.map((e) => `${SITE}/${e.slug}/`)];
+// Hand-built static pages (not generated from products) that should be indexed.
+const STATIC_PAGES = ["rescue-drop"];
+const urls = [
+  `${SITE}/`,
+  ...STATIC_PAGES.map((s) => `${SITE}/${s}/`),
+  ...entries.map((e) => `${SITE}/${e.slug}/`),
+];
 const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map((u) => `  <url>\n    <loc>${u}</loc>\n    <changefreq>weekly</changefreq>\n  </url>`).join("\n") +

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Weekly Rescue Drop | DoubleTrouble Golf</title>
+  <meta name="description" content="Every week the twins hunt, wash, and hand-grade a fresh haul of lost golf balls — then drop them as the $29 Rescue Box. Watch this week's Rescue Drop.">
+  <link rel="canonical" href="https://doubletroublegolf.com/rescue-drop/">
+  <meta property="og:title" content="The Weekly Rescue Drop | DoubleTrouble Golf">
+  <meta property="og:description" content="Watch the twins rescue, clean, and grade lost golf balls — this week's Rescue Box is live.">
+  <meta property="og:image" content="https://doubletroublegolf.com/images/twins-pond.jpg">
+  <meta property="og:url" content="https://doubletroublegolf.com/rescue-drop/">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/tracking.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="/">
+      <span class="logo-balls" aria-hidden="true"><span class="logo-ball"></span><span class="logo-ball"></span></span>
+      DoubleTrouble<span class="wordmark-accent">Golf</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/#shop">Shop</a>
+      <a href="/#grading">Grading</a>
+      <a href="/#story">Our Story</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-kicker">New drop every week</p>
+          <h1>The Weekly<br>Rescue Drop</h1>
+          <p class="hero-sub">Every week we hunt the ponds and woods, haul out the lost balls, wash and hand-grade every one, then drop the best as a fresh <strong>Rescue Box</strong> — 2 dozen premium balls for <strong>$29, shipped free.</strong> When they're gone, they're gone.</p>
+          <p id="ref-applied" class="ref-applied" hidden></p>
+          <div class="hero-cta">
+            <button class="btn btn-primary" onclick="buy()">Grab this week's Rescue Box — $29</button>
+            <a class="hero-link" href="/#shop">or shop all balls →</a>
+          </div>
+        </div>
+        <img class="hero-photo" src="/images/twins-pond.jpg"
+             alt="The twins wading in a pond hunting for lost golf balls"
+             width="825" height="1100">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>This week's Rescue Drop</h2>
+      <p class="section-sub">See the haul, the wash, the sort, and the best find of the week.</p>
+      <div class="video-frame">
+        <!--
+          To show this week's video: replace the placeholder below with the
+          embed code from YouTube/Instagram/TikTok, e.g.:
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Rescue Drop"
+                  allowfullscreen></iframe>
+        -->
+        <div class="video-placeholder">▶ This week's video drops here</div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <h2>How the rescue works</h2>
+      <ol class="how-steps">
+        <li><strong>Hunt.</strong> We comb the ponds, woods, and tall grass at local courses (with permission).</li>
+        <li><strong>Wash.</strong> Every ball gets scrubbed until it shines.</li>
+        <li><strong>Grade.</strong> We sort by brand and condition by hand — no robots, just two picky 12-year-olds.</li>
+        <li><strong>Drop.</strong> The best become the weekly Rescue Box, shipped free anywhere in the continental US.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Partner with the Rescue Drop</h2>
+      <p>Run a course, coach juniors, or make golf content in DFW? Share DoubleTrouble Golf and earn on every sale you send. You get a personal code (like <code>WATTERS10</code>) that gives your followers a deal and credits the sale to you. It's a local junior-golf entrepreneurship story golfers love to root for.</p>
+      <p><a class="btn btn-primary" id="partner-email" href="#">Become a partner →</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>DoubleTrouble Golf</strong> — twice the balls, half the price.</p>
+  </footer>
+
+  <script>
+    function buy() {
+      try {
+        var c = JSON.parse(localStorage.getItem("dtg-cart") || "{}");
+        if (!c || typeof c !== "object") c = {};
+        c["rescue-box"] = (c["rescue-box"] || 0) + 1;
+        localStorage.setItem("dtg-cart", JSON.stringify(c));
+        if (window.dtgTrack) window.dtgTrack("AddToCart", { value: 29, currency: "USD", content_name: "The Rescue Box" });
+      } catch (e) {}
+      location.href = "/#cart";
+    }
+    // Show a friendly note if the visitor arrived via a partner code.
+    (function () {
+      var code = window.dtgGetRef && window.dtgGetRef();
+      if (code) {
+        var el = document.getElementById("ref-applied");
+        el.textContent = "🏷️ Partner code " + code + " applied — your order supports them.";
+        el.hidden = false;
+      }
+      var pe = document.getElementById("partner-email");
+      if (pe) pe.href = "mailto:orders@doubletroublegolf.com?subject=" + encodeURIComponent("Rescue Drop partner");
+    })();
+  </script>
+</body>
+</html>

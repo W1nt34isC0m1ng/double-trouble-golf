@@ -264,7 +264,10 @@ async function checkout() {
     const res = await fetch(CHECKOUT_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: cart }),
+      body: JSON.stringify({
+        items: cart,
+        ref: (window.dtgGetRef && window.dtgGetRef()) || undefined,
+      }),
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok || !data.url) {

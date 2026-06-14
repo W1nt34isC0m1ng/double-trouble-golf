@@ -44,6 +44,30 @@ if (CLOUDFLARE_TOKEN) {
   document.head.appendChild(cf);
 }
 
+// ---- Partner referral code capture (?ref=CODE) ----
+// A partner link like doubletroublegolf.com/?ref=WATTERS10 is remembered for
+// 30 days and attached to any order, so sales can be credited to that partner.
+(function () {
+  try {
+    const ref = new URLSearchParams(location.search).get("ref");
+    if (ref) {
+      const clean = ref.toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32);
+      if (clean) localStorage.setItem("dtg-ref", JSON.stringify({ code: clean, ts: Date.now() }));
+    }
+  } catch (e) {}
+})();
+
+window.dtgGetRef = function () {
+  try {
+    const raw = JSON.parse(localStorage.getItem("dtg-ref"));
+    if (!raw || !raw.code) return null;
+    if (Date.now() - raw.ts > 30 * 24 * 60 * 60 * 1000) return null; // 30-day window
+    return raw.code;
+  } catch (e) {
+    return null;
+  }
+};
+
 // ---- Helpers: fire Meta standard events. Safe no-op when the pixel is off. ----
 
 // Generic: AddToCart, InitiateCheckout, etc. (used by app.js)

@@ -19,12 +19,17 @@ exports.handler = async (event) => {
     return json(500, { error: "Checkout is not configured yet." });
   }
 
-  let items;
+  let body;
   try {
-    items = JSON.parse(event.body || "{}").items;
+    body = JSON.parse(event.body || "{}");
   } catch {
     return json(400, { error: "Invalid request." });
   }
+  const items = body.items;
+  const ref =
+    typeof body.ref === "string"
+      ? body.ref.toUpperCase().replace(/[^A-Z0-9_-]/g, "").slice(0, 32)
+      : "";
 
   let lineItems;
   try {
@@ -39,13 +44,21 @@ exports.handler = async (event) => {
 
   try {
     const stripe = require("stripe")(secret);
-    const session = await stripe.checkout.sessions.create({
+    const params = {
       mode: "payment",
       line_items: lineItems,
       shipping_address_collection: { allowed_countries: ["US"] },
       success_url: `${origin}/success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/cancel.html`,
-    });
+    };
+    // Credit a partner referral code (from a ?ref=CODE link) on the order so it
+    // shows in the Stripe Dashboard on both the session and the payment.
+    if (ref) {
+      params.client_reference_id = ref;
+      params.metadata = { referral: ref };
+      params.payment_intent_data = { metadata: { referral: ref } };
+    }
+    const session = await stripe.checkout.sessions.create(params);
     return json(200, { url: session.url });
   } catch (err) {
     console.error("Stripe error:", err.message);

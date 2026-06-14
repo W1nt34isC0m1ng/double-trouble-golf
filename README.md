@@ -141,6 +141,25 @@ const CLOUDFLARE_TOKEN = "";     // Cloudflare Web Analytics token
    return on ad spend.
 3. In your ad, set the conversion goal to **Purchase** to use it.
 
+## Partner referral codes & the Rescue Drop
+
+There's a weekly-campaign landing page at **`/rescue-drop/`** (also linked in
+the top nav). To embed each week's video, open `rescue-drop/index.html` and
+replace the `video-placeholder` div with the YouTube/Instagram/TikTok embed
+(there's a comment showing how).
+
+**Referral codes:** give each partner a link with `?ref=THEIRCODE`, e.g.
+
+```
+https://doubletroublegolf.com/?ref=WATTERS10
+https://doubletroublegolf.com/rescue-drop/?ref=WATTERS10
+```
+
+The code is remembered for 30 days and attached to any resulting order. To see
+which sales a partner drove, open **Stripe → Payments**: the code appears on
+each order as the **client reference / `referral` metadata**. (Codes are just
+labels — there's no automatic discount; you decide what each partner earns.)
+
 ## Running and testing locally
 
 - Preview the pages: `python3 -m http.server 8000`, then open
