@@ -44,6 +44,16 @@ this:
 
 Refresh the page in your browser to see the changes.
 
+**After editing `products.js`, rebuild the SEO pages:** run `npm run generate`.
+This regenerates the per-product pages (e.g. `/used-titleist-pro-v1-mint/`),
+`sitemap.xml`, the Google Merchant `feed.xml`, and the homepage "Shop by ball"
+links — all from your product list. Then commit/push as usual.
+
+**Product photos for Google Shopping:** the Merchant feed expects a real photo
+for each product at `images/products/<id>.jpg` (the `<id>` from `products.js`,
+e.g. `images/products/titleist-prov1-mint.jpg`). Add those before submitting
+the feed — Google requires real product images.
+
 ## The contact email
 
 The footer contact link uses the address at the top of **`js/app.js`**:

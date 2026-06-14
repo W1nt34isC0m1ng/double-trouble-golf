@@ -4,7 +4,8 @@
   "private": true,
   "description": "DoubleTrouble Golf — used golf ball shop with Stripe checkout",
   "scripts": {
-    "test": "node --test netlify/functions/lib/cart.test.js"
+    "test": "node --test netlify/functions/lib/cart.test.js",
+    "generate": "node scripts/generate.js"
   },
   "dependencies": {
     "stripe": "^17.7.0"

@@ -11,11 +11,24 @@
 //   pricePerDozen - price in dollars for 12 balls
 //   blurb         - one fun sentence about the ball
 //   accent        - card stripe color (any CSS color)
+//   unit          - OPTIONAL: what one item is. Defaults to "dozen". Use "box"
+//                   for bundles (e.g. the Rescue Box = 2 dozen for one price).
 //   image         - OPTIONAL: path to a photo, e.g. "images/prov1.jpg".
 //                   Leave it out and the card shows our golf-ball drawing.
 // ============================================================
 
 const PRODUCTS = [
+  {
+    id: "rescue-box",
+    brand: "Best value",
+    name: "The Rescue Box",
+    grade: "",
+    unit: "box",
+    pricePerDozen: 29,
+    blurb:
+      "This week's Rescue Drop: 2 dozen hand-graded premium balls (Pro V1, TP5, Chrome Soft & more), shipped free.",
+    accent: "#caa53d",
+  },
   {
     id: "titleist-prov1-mint",
     brand: "Titleist",

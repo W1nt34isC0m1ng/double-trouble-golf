@@ -104,10 +104,6 @@ function renderProducts() {
     name.className = "card-name";
     name.textContent = p.name;
 
-    const badge = document.createElement("span");
-    badge.className = "grade-badge " + gradeClass(p.grade);
-    badge.textContent = p.grade;
-
     const blurb = document.createElement("p");
     blurb.className = "card-blurb";
     blurb.textContent = p.blurb;
@@ -117,7 +113,7 @@ function renderProducts() {
 
     const price = document.createElement("span");
     price.className = "card-price";
-    price.innerHTML = `$${p.pricePerDozen}<small>/dozen</small>`;
+    price.innerHTML = `$${p.pricePerDozen}<small>/${p.unit || "dozen"}</small>`;
 
     const addBtn = document.createElement("button");
     addBtn.className = "add-btn";
@@ -125,7 +121,14 @@ function renderProducts() {
     addBtn.addEventListener("click", () => addToCart(p.id));
 
     priceRow.append(price, addBtn);
-    body.append(brandEl, name, badge, blurb, priceRow);
+    body.append(brandEl, name);
+    if (p.grade) {
+      const badge = document.createElement("span");
+      badge.className = "grade-badge " + gradeClass(p.grade);
+      badge.textContent = p.grade;
+      body.append(badge);
+    }
+    body.append(blurb, priceRow);
     card.append(art, body);
     grid.appendChild(card);
   }
@@ -180,7 +183,8 @@ function renderCart() {
     nameEl.textContent = `${p.brand} ${p.name}`;
     const meta = document.createElement("div");
     meta.className = "cart-line-meta";
-    meta.textContent = `${p.grade} • $${p.pricePerDozen}/dozen`;
+    meta.textContent =
+      `${p.grade ? p.grade + " • " : ""}$${p.pricePerDozen}/${p.unit || "dozen"}`;
     info.append(nameEl, meta);
 
     const controls = document.createElement("div");
@@ -296,4 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderProducts();
   renderCart();
+
+  // Arriving from a product page's "Add to cart" link opens the cart.
+  if (location.hash === "#cart") openCart();
 });

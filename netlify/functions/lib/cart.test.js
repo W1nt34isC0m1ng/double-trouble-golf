@@ -6,7 +6,14 @@ const { buildLineItems } = require("./cart");
 const PRODUCTS = [
   { id: "ball-a", brand: "Titleist", name: "Pro V1", grade: "Mint", pricePerDozen: 20 },
   { id: "ball-b", brand: "Mixed", name: "Practice Pack", grade: "Good", pricePerDozen: 6 },
+  { id: "box", brand: "Best value", name: "The Rescue Box", grade: "", unit: "box", pricePerDozen: 29 },
 ];
+
+test("bundle with no grade gets a clean name (no empty parens)", () => {
+  const items = buildLineItems({ box: 1 }, PRODUCTS);
+  assert.strictEqual(items[0].price_data.product_data.name, "Best value The Rescue Box");
+  assert.strictEqual(items[0].price_data.unit_amount, 2900);
+});
 
 test("builds Stripe line_items from a valid cart", () => {
   const items = buildLineItems({ "ball-a": 2, "ball-b": 1 }, PRODUCTS);

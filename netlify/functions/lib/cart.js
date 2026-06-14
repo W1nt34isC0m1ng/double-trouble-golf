@@ -32,7 +32,9 @@ function buildLineItems(items, products) {
         currency: "usd",
         unit_amount: Math.round(product.pricePerDozen * 100), // dollars -> cents
         product_data: {
-          name: `${product.brand} ${product.name} (${product.grade})`,
+          name: product.grade
+            ? `${product.brand} ${product.name} (${product.grade})`
+            : `${product.brand} ${product.name}`,
         },
       },
     });

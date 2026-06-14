@@ -53,7 +53,14 @@
           <p class="hero-kicker">Recovered • Cleaned • Graded by hand</p>
           <h1>Twice the balls.<br>Half the price.</h1>
           <p class="hero-sub">We're twins who rescue golf balls from ponds, woods, and weeds, scrub them till they shine, and sell them for way less than new. Your wallet (and the water hazard) will thank you.</p>
-          <a class="btn btn-primary" href="#shop">Shop golf balls</a>
+          <div class="hero-offer">
+            <span class="hero-offer-tag">This week's Rescue Drop</span>
+            <strong>The Rescue Box</strong> — 2 dozen hand-graded premium balls, <strong>$29 shipped free.</strong>
+          </div>
+          <div class="hero-cta">
+            <button class="btn btn-primary" onclick="addToCart('rescue-box')">Get the Rescue Box — $29</button>
+            <a class="hero-link" href="#shop">or shop all balls →</a>
+          </div>
         </div>
         <img class="hero-photo" src="images/twins-and-dog.jpg"
              alt="The DoubleTrouble Golf twins and their dog at the course"
@@ -63,7 +70,7 @@
 
     <section id="shop" class="section">
       <h2>The Ball Shop</h2>
-      <p class="section-sub">All prices are per dozen. Every ball is washed, inspected, and graded by us personally.</p>
+      <p class="section-sub">Sold by the dozen (the Rescue Box is 2 dozen). Every ball is washed, inspected, and graded by us personally.</p>
       <div class="filter-bar">
         <label>Brand
           <select id="brand-filter">
@@ -127,7 +134,7 @@
     <section id="how" class="section section-alt">
       <h2>How Ordering Works</h2>
       <ol class="how-steps">
-        <li><strong>Pick your balls.</strong> Add whatever you want to your cart — everything is sold by the dozen.</li>
+        <li><strong>Pick your balls.</strong> Add whatever you want to your cart — balls are sold by the dozen, or grab the 2-dozen Rescue Box.</li>
         <li><strong>Check out securely.</strong> Hit "Pay with card" and pay online in seconds. Card payments are handled by Stripe, so your details are always safe.</li>
         <li><strong>We ship them to you.</strong> Enter your address at checkout and we'll mail your golf balls right to your door. Free shipping anywhere in the continental US.</li>
       </ol>
@@ -157,6 +164,27 @@
       </details>
     </section>
   </main>
+
+  <nav class="shop-by-ball" aria-label="Shop by ball">
+    <h2>Shop by ball</h2>
+    <ul class="ball-links">
+      <!--PRODUCT_LINKS_START-->
+      <li><a href="/the-rescue-box/">The Rescue Box</a></li>
+      <li><a href="/used-titleist-pro-v1-mint/">Used Titleist Pro V1</a></li>
+      <li><a href="/used-titleist-pro-v1x-near-mint/">Used Titleist Pro V1x</a></li>
+      <li><a href="/used-callaway-chrome-soft-mint/">Used Callaway Chrome Soft</a></li>
+      <li><a href="/used-callaway-supersoft-near-mint/">Used Callaway Supersoft</a></li>
+      <li><a href="/used-taylormade-tp5-mint/">Used TaylorMade TP5</a></li>
+      <li><a href="/used-taylormade-tour-response-near-mint/">Used TaylorMade Tour Response</a></li>
+      <li><a href="/used-bridgestone-tour-b-xs-near-mint/">Used Bridgestone Tour B XS</a></li>
+      <li><a href="/used-srixon-z-star-mint/">Used Srixon Z-Star</a></li>
+      <li><a href="/used-srixon-soft-feel-good/">Used Srixon Soft Feel</a></li>
+      <li><a href="/used-mixed-premium-grab-bag-good/">Used Mixed Premium Grab Bag</a></li>
+      <li><a href="/used-mixed-practice-pack-good/">Used Mixed Practice Pack</a></li>
+      <li><a href="/used-mixed-mystery-dozen-near-mint/">Used Mixed Mystery Dozen</a></li>
+      <!--PRODUCT_LINKS_END-->
+    </ul>
+  </nav>
 
   <footer class="site-footer">
     <p><strong>DoubleTrouble Golf</strong> — twice the balls, half the price.</p>

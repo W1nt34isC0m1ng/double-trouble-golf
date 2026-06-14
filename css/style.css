@@ -156,15 +156,52 @@ h1, h2, h3 { line-height: 1.15; }
 
 .hero-sub {
   max-width: 36rem;
-  margin: 0 0 2rem;
+  margin: 0 0 1.5rem;
   font-size: 1.1rem;
   color: #e8efe9;
 }
+
+.hero-offer {
+  max-width: 36rem;
+  margin: 0 0 1.25rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(232, 201, 126, 0.5);
+  font-size: 0.98rem;
+}
+
+.hero-offer-tag {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--sand);
+  margin-bottom: 0.25rem;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-link {
+  color: var(--sand);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-link:hover { text-decoration: underline; }
 
 @media (max-width: 760px) {
   .hero-inner { flex-direction: column-reverse; gap: 2rem; }
   .hero-content { text-align: center; }
   .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-offer { margin-left: auto; margin-right: auto; }
+  .hero-cta { justify-content: center; }
   .hero-photo { width: 240px; max-width: 75%; }
 }
 
@@ -558,6 +595,60 @@ h1, h2, h3 { line-height: 1.15; }
 }
 
 .cart-note { margin: 0.7rem 0 0; font-size: 0.8rem; color: #6a7a6f; }
+
+.product-crumb { margin: 0 0 1.5rem; }
+.product-crumb a { color: var(--green); text-decoration: none; font-weight: 600; }
+
+.product-page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.product-page .card-art {
+  height: 260px;
+  border-radius: var(--radius);
+}
+
+.product-page h1 { color: var(--green-dark); font-size: 1.8rem; margin: 0.2rem 0 0.6rem; }
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin: 0 0 1rem;
+}
+
+.product-price small { font-size: 0.6em; font-weight: 600; color: #6a7a6f; }
+
+.product-page .btn { margin: 0.5rem 0 1.5rem; }
+
+.product-seo { color: #4c5a51; font-size: 0.95rem; }
+
+@media (max-width: 640px) {
+  .product-page { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+.shop-by-ball {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2.5rem;
+}
+
+.shop-by-ball h2 { font-size: 1.1rem; color: var(--green-dark); margin: 0 0 0.6rem; }
+
+.ball-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+}
+
+.ball-links a { color: var(--green); font-size: 0.9rem; text-decoration: none; }
+.ball-links a:hover { text-decoration: underline; }
 
 .checkout-error {
   display: none;

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Used Bridgestone Tour B XS Golf Balls – Near Mint | DoubleTrouble Golf</title>
+  <meta name="description" content="Tiger plays this one. Now you can too, for way less.">
+  <link rel="canonical" href="https://doubletroublegolf.com/used-bridgestone-tour-b-xs-near-mint/">
+  <meta property="og:title" content="Used Bridgestone Tour B XS Golf Balls – Near Mint | DoubleTrouble Golf">
+  <meta property="og:description" content="Tiger plays this one. Now you can too, for way less.">
+  <meta property="og:image" content="https://doubletroublegolf.com/images/products/bridgestone-tourbxs-near-mint.jpg">
+  <meta property="og:url" content="https://doubletroublegolf.com/used-bridgestone-tour-b-xs-near-mint/">
+  <meta property="og:type" content="product">
+  <script type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"Bridgestone Tour B XS","description":"Tiger plays this one. Now you can too, for way less.","image":"https://doubletroublegolf.com/images/products/bridgestone-tourbxs-near-mint.jpg","brand":{"@type":"Brand","name":"Bridgestone"},"offers":{"@type":"Offer","url":"https://doubletroublegolf.com/used-bridgestone-tour-b-xs-near-mint/","priceCurrency":"USD","price":"17.00","itemCondition":"https://schema.org/UsedCondition","availability":"https://schema.org/InStock"}}</script>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/tracking.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="/">
+      <span class="logo-balls" aria-hidden="true"><span class="logo-ball"></span><span class="logo-ball"></span></span>
+      DoubleTrouble<span class="wordmark-accent">Golf</span>
+    </a>
+  </header>
+
+  <main class="section">
+    <p class="product-crumb"><a href="/#shop">← All golf balls</a></p>
+    <div class="product-page">
+      <div class="card-art" style="--accent: #b03030"><div class="card-ball"></div></div>
+      <div>
+        <p class="card-brand">Bridgestone</p>
+        <h1>Used Bridgestone Tour B XS Golf Balls <span class="grade-badge grade-near-mint">Near Mint</span></h1>
+        <p class="product-price">$17.00<small>/dozen</small> · free U.S. shipping</p>
+        <p>Tiger plays this one. Now you can too, for way less.</p>
+        <button class="btn btn-primary" onclick="buy()">Add to cart</button>
+        <p class="product-seo">Every dozen of these Bridgestone Tour B XS balls is recovered from local courses, washed, and hand-graded by the DoubleTrouble Golf twins, then shipped free anywhere in the continental US. Near Mint condition means the ball plays like new with only the faintest scuff.</p>
+        <p><a href="/#grading">See how we grade →</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>DoubleTrouble Golf</strong> — twice the balls, half the price.</p>
+  </footer>
+
+  <script>
+    function buy() {
+      try {
+        var c = JSON.parse(localStorage.getItem("dtg-cart") || "{}");
+        if (!c || typeof c !== "object") c = {};
+        c["bridgestone-tourbxs-near-mint"] = (c["bridgestone-tourbxs-near-mint"] || 0) + 1;
+        localStorage.setItem("dtg-cart", JSON.stringify(c));
+        if (window.dtgTrack) window.dtgTrack("AddToCart", { value: 17, currency: "USD", content_name: "Bridgestone Tour B XS" });
+      } catch (e) {}
+      location.href = "/#cart";
+    }
+  </script>
+</body>
+</html>
