@@ -137,6 +137,50 @@ const PRODUCTS = [
     blurb: "Twelve nice balls, twelve brands of luck. Double the fun.",
     accent: "#3aa6a0",
   },
+  {
+    id: "bulk-tour-50",
+    brand: "Mixed",
+    name: "50-Ball Tour Grab Bag",
+    grade: "",
+    unit: "bag",
+    pricePerDozen: 39,
+    blurb:
+      "50 premium tour balls (Pro V1, TP5, Chrome Soft & friends) in Near Mint / Good shape. A big bag for serious players.",
+    accent: "#1b5e3b",
+  },
+  {
+    id: "bulk-tour-100",
+    brand: "Mixed",
+    name: "100-Ball Tour Grab Bag",
+    grade: "",
+    unit: "bag",
+    pricePerDozen: 69,
+    blurb:
+      "100 premium tour balls in Near Mint / Good shape. Our best per-ball price on the good stuff.",
+    accent: "#0e3d25",
+  },
+  {
+    id: "bulk-assorted-50",
+    brand: "Mixed",
+    name: "50-Ball Assorted Grab Bag",
+    grade: "",
+    unit: "bag",
+    pricePerDozen: 24,
+    blurb:
+      "50 assorted-brand balls in Near Mint / Good shape. Perfect for practice or high-volume rounds.",
+    accent: "#6b7280",
+  },
+  {
+    id: "bulk-assorted-100",
+    brand: "Mixed",
+    name: "100-Ball Assorted Grab Bag",
+    grade: "",
+    unit: "bag",
+    pricePerDozen: 42,
+    blurb:
+      "100 assorted-brand balls in Near Mint / Good shape. Stock up once and never run out.",
+    accent: "#8a5fb0",
+  },
 ];
 
 // Let the checkout serverless function import this same list in Node, so the

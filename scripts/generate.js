@@ -21,8 +21,13 @@ function slugify(s) {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
+// A "bundle" is anything not sold by the dozen — the Rescue Box, bulk bags, etc.
+function isBundle(p) {
+  return p.unit && p.unit !== "dozen";
+}
+
 function slugFor(p) {
-  return p.unit === "box" ? slugify(p.name) : slugify(`used ${p.brand} ${p.name} ${p.grade}`);
+  return isBundle(p) ? slugify(p.name) : slugify(`used ${p.brand} ${p.name} ${p.grade}`);
 }
 
 function esc(s) {
@@ -37,11 +42,11 @@ function productPage(p) {
   const slug = slugFor(p);
   const url = `${SITE}/${slug}/`;
   const unit = p.unit || "dozen";
-  const displayName = p.unit === "box" ? p.name : `Used ${p.brand} ${p.name} Golf Balls`;
+  const displayName = isBundle(p) ? p.name : `Used ${p.brand} ${p.name} Golf Balls`;
   const title = `${displayName}${p.grade ? " – " + p.grade : ""} | DoubleTrouble Golf`;
   const price = p.pricePerDozen.toFixed(2);
   const image = `${SITE}/images/products/${p.id}.jpg`;
-  const brandName = p.unit === "box" ? "DoubleTrouble Golf" : p.brand;
+  const brandName = isBundle(p) ? "DoubleTrouble Golf" : p.brand;
 
   const ld = {
     "@context": "https://schema.org/",
@@ -100,8 +105,8 @@ function productPage(p) {
         <p>${esc(p.blurb)}</p>
         <button class="btn btn-primary" onclick="buy()">Add to cart</button>
         <p class="product-seo">${esc(
-          p.unit === "box"
-            ? "The Rescue Box is two dozen premium balls recovered from local courses, washed, and hand-graded by the DoubleTrouble Golf twins, then shipped free anywhere in the continental US."
+          isBundle(p)
+            ? `${p.blurb} Every ball is recovered from local courses, washed, and hand-graded by the DoubleTrouble Golf twins, then shipped free anywhere in the continental US.`
             : `Every dozen of these ${p.brand} ${p.name} balls is recovered from local courses, washed, and hand-graded by the DoubleTrouble Golf twins, then shipped free anywhere in the continental US. ${p.grade} condition means ${gradeBlurb(p.grade)}`
         )}</p>
         <p><a href="/#grading">See how we grade →</a></p>
@@ -164,8 +169,8 @@ fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemap);
 // --- feed.xml (Google Merchant Center) ---
 const items = entries
   .map(({ p, slug }) => {
-    const brand = p.unit === "box" ? "DoubleTrouble Golf" : p.brand;
-    const titleName = p.unit === "box" ? p.name : `Used ${p.brand} ${p.name} Golf Balls${p.grade ? " - " + p.grade : ""}`;
+    const brand = isBundle(p) ? "DoubleTrouble Golf" : p.brand;
+    const titleName = isBundle(p) ? p.name : `Used ${p.brand} ${p.name} Golf Balls${p.grade ? " - " + p.grade : ""}`;
     return `    <item>
       <g:id>${esc(p.id)}</g:id>
       <g:title>${esc(titleName)}</g:title>
@@ -195,7 +200,7 @@ fs.writeFileSync(path.join(ROOT, "feed.xml"), feed);
 // --- inject internal links into index.html ---
 const linksHtml = entries
   .map(({ p, slug }) => {
-    const label = p.unit === "box" ? p.name : `Used ${p.brand} ${p.name}`;
+    const label = isBundle(p) ? p.name : `Used ${p.brand} ${p.name}`;
     return `      <li><a href="/${slug}/">${esc(label)}</a></li>`;
   })
   .join("\n");

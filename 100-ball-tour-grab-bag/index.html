@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100-Ball Tour Grab Bag | DoubleTrouble Golf</title>
+  <meta name="description" content="100 premium tour balls in Near Mint / Good shape. Our best per-ball price on the good stuff.">
+  <link rel="canonical" href="https://doubletroublegolf.com/100-ball-tour-grab-bag/">
+  <meta property="og:title" content="100-Ball Tour Grab Bag | DoubleTrouble Golf">
+  <meta property="og:description" content="100 premium tour balls in Near Mint / Good shape. Our best per-ball price on the good stuff.">
+  <meta property="og:image" content="https://doubletroublegolf.com/images/products/bulk-tour-100.jpg">
+  <meta property="og:url" content="https://doubletroublegolf.com/100-ball-tour-grab-bag/">
+  <meta property="og:type" content="product">
+  <script type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"Mixed 100-Ball Tour Grab Bag","description":"100 premium tour balls in Near Mint / Good shape. Our best per-ball price on the good stuff.","image":"https://doubletroublegolf.com/images/products/bulk-tour-100.jpg","brand":{"@type":"Brand","name":"DoubleTrouble Golf"},"offers":{"@type":"Offer","url":"https://doubletroublegolf.com/100-ball-tour-grab-bag/","priceCurrency":"USD","price":"69.00","itemCondition":"https://schema.org/UsedCondition","availability":"https://schema.org/InStock"}}</script>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/tracking.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="/">
+      <span class="logo-balls" aria-hidden="true"><span class="logo-ball"></span><span class="logo-ball"></span></span>
+      DoubleTrouble<span class="wordmark-accent">Golf</span>
+    </a>
+  </header>
+
+  <main class="section">
+    <p class="product-crumb"><a href="/#shop">← All golf balls</a></p>
+    <div class="product-page">
+      <div class="card-art" style="--accent: #0e3d25"><div class="card-ball"></div></div>
+      <div>
+        <p class="card-brand">Mixed</p>
+        <h1>100-Ball Tour Grab Bag</h1>
+        <p class="product-price">$69.00<small>/bag</small> · free U.S. shipping</p>
+        <p>100 premium tour balls in Near Mint / Good shape. Our best per-ball price on the good stuff.</p>
+        <button class="btn btn-primary" onclick="buy()">Add to cart</button>
+        <p class="product-seo">100 premium tour balls in Near Mint / Good shape. Our best per-ball price on the good stuff. Every ball is recovered from local courses, washed, and hand-graded by the DoubleTrouble Golf twins, then shipped free anywhere in the continental US.</p>
+        <p><a href="/#grading">See how we grade →</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>DoubleTrouble Golf</strong> — twice the balls, half the price.</p>
+  </footer>
+
+  <script>
+    function buy() {
+      try {
+        var c = JSON.parse(localStorage.getItem("dtg-cart") || "{}");
+        if (!c || typeof c !== "object") c = {};
+        c["bulk-tour-100"] = (c["bulk-tour-100"] || 0) + 1;
+        localStorage.setItem("dtg-cart", JSON.stringify(c));
+        if (window.dtgTrack) window.dtgTrack("AddToCart", { value: 69, currency: "USD", content_name: "Mixed 100-Ball Tour Grab Bag" });
+      } catch (e) {}
+      location.href = "/#cart";
+    }
+  </script>
+</body>
+</html>

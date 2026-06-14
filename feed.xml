@@ -160,5 +160,53 @@
       <g:brand>Mixed</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
+    <item>
+      <g:id>bulk-tour-50</g:id>
+      <g:title>50-Ball Tour Grab Bag</g:title>
+      <g:description>50 premium tour balls (Pro V1, TP5, Chrome Soft &amp; friends) in Near Mint / Good shape. A big bag for serious players.</g:description>
+      <g:link>https://doubletroublegolf.com/50-ball-tour-grab-bag/</g:link>
+      <g:image_link>https://doubletroublegolf.com/images/products/bulk-tour-50.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>used</g:condition>
+      <g:price>39.00 USD</g:price>
+      <g:brand>DoubleTrouble Golf</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>bulk-tour-100</g:id>
+      <g:title>100-Ball Tour Grab Bag</g:title>
+      <g:description>100 premium tour balls in Near Mint / Good shape. Our best per-ball price on the good stuff.</g:description>
+      <g:link>https://doubletroublegolf.com/100-ball-tour-grab-bag/</g:link>
+      <g:image_link>https://doubletroublegolf.com/images/products/bulk-tour-100.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>used</g:condition>
+      <g:price>69.00 USD</g:price>
+      <g:brand>DoubleTrouble Golf</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>bulk-assorted-50</g:id>
+      <g:title>50-Ball Assorted Grab Bag</g:title>
+      <g:description>50 assorted-brand balls in Near Mint / Good shape. Perfect for practice or high-volume rounds.</g:description>
+      <g:link>https://doubletroublegolf.com/50-ball-assorted-grab-bag/</g:link>
+      <g:image_link>https://doubletroublegolf.com/images/products/bulk-assorted-50.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>used</g:condition>
+      <g:price>24.00 USD</g:price>
+      <g:brand>DoubleTrouble Golf</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+    </item>
+    <item>
+      <g:id>bulk-assorted-100</g:id>
+      <g:title>100-Ball Assorted Grab Bag</g:title>
+      <g:description>100 assorted-brand balls in Near Mint / Good shape. Stock up once and never run out.</g:description>
+      <g:link>https://doubletroublegolf.com/100-ball-assorted-grab-bag/</g:link>
+      <g:image_link>https://doubletroublegolf.com/images/products/bulk-assorted-100.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:condition>used</g:condition>
+      <g:price>42.00 USD</g:price>
+      <g:brand>DoubleTrouble Golf</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+    </item>
   </channel>
 </rss>
