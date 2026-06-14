@@ -37,6 +37,7 @@ const PRODUCTS = [
     pricePerDozen: 23,
     blurb: "The #1 ball in golf, fished out looking brand new.",
     accent: "#1b5e3b",
+    image: "images/products/titleist-prov1-mint.jpg",
   },
   {
     id: "titleist-prov1x-near-mint",
