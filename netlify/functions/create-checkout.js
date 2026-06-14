@@ -43,7 +43,7 @@ exports.handler = async (event) => {
       mode: "payment",
       line_items: lineItems,
       shipping_address_collection: { allowed_countries: ["US"] },
-      success_url: `${origin}/success.html`,
+      success_url: `${origin}/success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/cancel.html`,
     });
     return json(200, { url: session.url });

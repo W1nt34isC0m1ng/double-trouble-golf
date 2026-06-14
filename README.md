@@ -103,6 +103,34 @@ After this, **updating the site = `git push`** — Netlify rebuilds and
 redeploys automatically. (The custom domain `doubletroublegolf.com` is already
 pointed at this Netlify project.)
 
+## Traffic counter & Facebook/Instagram ad tracking
+
+Analytics are **off until you add your IDs** — the site runs the same with them
+blank. Both IDs live at the top of **`js/tracking.js`**:
+
+```js
+const META_PIXEL_ID = "";       // Facebook/Meta Pixel ID
+const CLOUDFLARE_TOKEN = "";     // Cloudflare Web Analytics token
+```
+
+**Free traffic counter (Cloudflare Web Analytics):**
+1. Create a free account at <https://dash.cloudflare.com>, go to **Analytics &
+   Logs → Web Analytics → Add a site**, enter `doubletroublegolf.com`.
+2. It shows a snippet containing a `token`. Copy just that token into
+   `CLOUDFLARE_TOKEN`, then `git push`.
+3. You'll see visits, page views, top pages, and where traffic comes from — no
+   cookie banner needed.
+
+**Facebook/Instagram ad tracking (Meta Pixel):**
+1. In **Meta Events Manager** (<https://business.facebook.com/events_manager>),
+   create a pixel and copy its numeric **Pixel ID** into `META_PIXEL_ID`, then
+   `git push`.
+2. Every page now reports a **PageView**, and the thank-you page fires a
+   **Purchase** event with the real order amount (looked up securely from
+   Stripe). That lets Meta optimize your ad for actual sales and show you
+   return on ad spend.
+3. In your ad, set the conversion goal to **Purchase** to use it.
+
 ## Running and testing locally
 
 - Preview the pages: `python3 -m http.server 8000`, then open
@@ -120,7 +148,9 @@ pointed at this Netlify project.)
 | `css/style.css` | All the colors and layout |
 | `js/products.js` | **The product list — the file you'll edit most** |
 | `js/app.js` | Shop grid, filters, cart, and the checkout button |
+| `js/tracking.js` | **Traffic counter + Meta Pixel IDs go here** |
 | `netlify/functions/create-checkout.js` | Creates the Stripe payment page |
 | `netlify/functions/lib/cart.js` | Prices the cart (shared, tested logic) |
+| `netlify/functions/order-summary.js` | Order total for the Purchase event |
 | `success.html` / `cancel.html` | Shown after paying / cancelling |
 | `netlify.toml`, `package.json` | Tell Netlify how to build the function |

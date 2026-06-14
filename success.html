@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order confirmed — DoubleTrouble Golf</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/tracking.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -28,8 +29,28 @@
   </footer>
 
   <script>
-    // The order is paid — clear the saved cart so it doesn't linger.
-    try { localStorage.removeItem("dtg-cart"); } catch (e) {}
+    // Fire the Meta "Purchase" conversion with the real order value, then
+    // clear the saved cart. We look the amount up from Stripe (server-side)
+    // so the value is always accurate, and guard against double-counting on
+    // page refresh.
+    (async () => {
+      try {
+        const sid = new URLSearchParams(location.search).get("session_id");
+        if (sid && !localStorage.getItem("dtg-tracked-" + sid)) {
+          const res = await fetch(
+            "/.netlify/functions/order-summary?session_id=" + encodeURIComponent(sid)
+          );
+          if (res.ok) {
+            const d = await res.json();
+            if (d.payment_status === "paid" && window.dtgTrackPurchase) {
+              window.dtgTrackPurchase(d.amount_total / 100, (d.currency || "usd").toUpperCase());
+              localStorage.setItem("dtg-tracked-" + sid, "1");
+            }
+          }
+        }
+      } catch (e) {}
+      try { localStorage.removeItem("dtg-cart"); } catch (e) {}
+    })();
   </script>
 </body>
 </html>
