@@ -160,6 +160,18 @@ which sales a partner drove, open **Stripe → Payments**: the code appears on
 each order as the **client reference / `referral` metadata**. (Codes are just
 labels — there's no automatic discount; you decide what each partner earns.)
 
+## The Trouble Club (monthly subscription)
+
+The homepage has a **Trouble Club** section (`#trouble-club`): $49/month for 2
+dozen tour balls, shipped monthly. "Join" creates a recurring Stripe
+subscription via `netlify/functions/create-subscription.js` (separate from the
+one-time cart). The price is set in that file (`PLAN.amount`, in cents).
+
+**Enable cancellations:** turn on the **Stripe Customer Portal** (Stripe →
+Settings → Billing → Customer portal) so members can manage or cancel their own
+subscription. You'll fulfil each month by checking **Stripe → Subscriptions**
+for active members and their shipping addresses.
+
 ## Running and testing locally
 
 - Preview the pages: `python3 -m http.server 8000`, then open

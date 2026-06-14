@@ -282,6 +282,38 @@ async function checkout() {
   }
 }
 
+// ---------- Trouble Club subscription ----------
+
+const SUBSCRIBE_ENDPOINT = "/.netlify/functions/create-subscription";
+
+async function joinTroubleClub() {
+  const btn = document.getElementById("trouble-club-btn");
+  const err = document.getElementById("club-error");
+  const label = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "Starting…";
+  if (err) err.style.display = "none";
+
+  try {
+    if (window.dtgTrack) window.dtgTrack("Subscribe", { value: 49, currency: "USD" });
+    const res = await fetch(SUBSCRIBE_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ref: (window.dtgGetRef && window.dtgGetRef()) || undefined }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.url) throw new Error(data.error || "Subscription failed");
+    window.location.href = data.url;
+  } catch (e) {
+    if (err) {
+      err.textContent = "Sorry — couldn't start the subscription. Please try again.";
+      err.style.display = "block";
+    }
+    btn.disabled = false;
+    btn.textContent = label;
+  }
+}
+
 // ---------- Init ----------
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -293,6 +325,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("cart-close").addEventListener("click", closeCart);
   document.getElementById("cart-overlay").addEventListener("click", closeCart);
   document.getElementById("checkout-btn").addEventListener("click", checkout);
+  const clubBtn = document.getElementById("trouble-club-btn");
+  if (clubBtn) clubBtn.addEventListener("click", joinTroubleClub);
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeCart();
   });

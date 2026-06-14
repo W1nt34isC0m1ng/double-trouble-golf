@@ -596,6 +596,41 @@ h1, h2, h3 { line-height: 1.15; }
 
 .cart-note { margin: 0.7rem 0 0; font-size: 0.8rem; color: #6a7a6f; }
 
+.club-card {
+  max-width: 38rem;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--cream);
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(232, 201, 126, 0.25), transparent 60%),
+    linear-gradient(160deg, var(--green) 0%, var(--green-dark) 100%);
+  border: 2px solid var(--sand);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+.club-tag {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--sand);
+  margin: 0 0 0.5rem;
+}
+
+.club-card h2 { color: var(--cream); margin: 0 0 0.5rem; }
+
+.club-price { margin: 0 0 1rem; }
+.club-price strong { font-size: 2.6rem; font-weight: 800; }
+.club-price span { color: #e8efe9; font-size: 1rem; }
+
+.club-desc { color: #e8efe9; margin: 0 auto 1.5rem; max-width: 30rem; }
+
+.club-card .btn-block { max-width: 22rem; margin: 0 auto; }
+
+.club-fine { font-size: 0.8rem; color: #cfe0d4; margin: 0.8rem 0 0; }
+
 .ref-applied {
   display: inline-block;
   margin: 0 0 1rem;
