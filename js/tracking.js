@@ -11,7 +11,7 @@
 // ============================================================
 
 const META_PIXEL_ID = "";       // e.g. "1234567890123456"
-const CLOUDFLARE_TOKEN = "";     // e.g. "a1b2c3d4e5f6..."
+const CLOUDFLARE_TOKEN = "53d44f33ef14473fb54aeb4dd918498b";     // e.g. "a1b2c3d4e5f6..."
 
 // ---- Meta Pixel (page views on every page) ----
 if (META_PIXEL_ID) {
