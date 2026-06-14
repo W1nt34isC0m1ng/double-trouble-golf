@@ -44,8 +44,16 @@ if (CLOUDFLARE_TOKEN) {
   document.head.appendChild(cf);
 }
 
-// ---- Helper: fire a Purchase conversion (used by success.html) ----
-// Safe to call even if the pixel is off — it just no-ops.
+// ---- Helpers: fire Meta standard events. Safe no-op when the pixel is off. ----
+
+// Generic: AddToCart, InitiateCheckout, etc. (used by app.js)
+window.dtgTrack = function (eventName, params) {
+  if (META_PIXEL_ID && window.fbq) {
+    fbq("track", eventName, params || {});
+  }
+};
+
+// Purchase conversion with order value (used by success.html)
 window.dtgTrackPurchase = function (value, currency) {
   if (META_PIXEL_ID && window.fbq) {
     fbq("track", "Purchase", { value: value, currency: currency || "USD" });

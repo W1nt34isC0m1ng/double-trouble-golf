@@ -137,6 +137,14 @@ function addToCart(id) {
   cart[id] = (cart[id] || 0) + 1;
   saveCart();
   openCart();
+  const p = productById(id);
+  if (window.dtgTrack && p) {
+    window.dtgTrack("AddToCart", {
+      value: p.pricePerDozen,
+      currency: "USD",
+      content_name: `${p.brand} ${p.name}`,
+    });
+  }
 }
 
 function changeQty(id, delta) {
@@ -233,6 +241,14 @@ function setCheckoutError(message) {
 
 async function checkout() {
   if (cartCount() === 0) return;
+
+  if (window.dtgTrack) {
+    window.dtgTrack("InitiateCheckout", {
+      value: cartTotal(),
+      currency: "USD",
+      num_items: cartCount(),
+    });
+  }
 
   const btn = document.getElementById("checkout-btn");
   const originalLabel = btn.textContent;
