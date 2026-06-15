@@ -55,6 +55,7 @@ const PRODUCTS = [
     blurb:
       "Two dozen hand-graded Titleist Pro V1x — higher flight, more spin, in Near Mint / Mint shape. Free shipping.",
     accent: "#0e3d25",
+    image: "images/products/prov1x-2dz.jpg",
     slug: "used-pro-v1x-golf-balls",
     pageTitle: "Used Titleist Pro V1x Golf Balls (2 Dozen) | DoubleTrouble Golf",
   },
