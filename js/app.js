@@ -55,8 +55,10 @@ function gradeClass(grade) {
 }
 
 function renderProducts() {
-  const brand = document.getElementById("brand-filter").value;
-  const grade = document.getElementById("grade-filter").value;
+  const brandEl = document.getElementById("brand-filter");
+  const gradeEl = document.getElementById("grade-filter");
+  const brand = brandEl ? brandEl.value : "All";
+  const grade = gradeEl ? gradeEl.value : "All";
   const grid = document.getElementById("product-grid");
 
   const matches = PRODUCTS.filter(
@@ -319,8 +321,10 @@ async function joinTroubleClub() {
 document.addEventListener("DOMContentLoaded", () => {
   cart = loadCart();
 
-  document.getElementById("brand-filter").addEventListener("change", renderProducts);
-  document.getElementById("grade-filter").addEventListener("change", renderProducts);
+  const brandFilter = document.getElementById("brand-filter");
+  const gradeFilter = document.getElementById("grade-filter");
+  if (brandFilter) brandFilter.addEventListener("change", renderProducts);
+  if (gradeFilter) gradeFilter.addEventListener("change", renderProducts);
   document.getElementById("cart-btn").addEventListener("click", openCart);
   document.getElementById("cart-close").addEventListener("click", closeCart);
   document.getElementById("cart-overlay").addEventListener("click", closeCart);

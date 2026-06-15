@@ -27,7 +27,14 @@ function isBundle(p) {
 }
 
 function slugFor(p) {
+  if (p.slug) return p.slug;
   return isBundle(p) ? slugify(p.name) : slugify(`used ${p.brand} ${p.name} ${p.grade}`);
+}
+
+// Use a real single brand for schema/feed; fall back to the store name for
+// multi-brand bundles (Value Mix, Rescue Box).
+function feedBrand(p) {
+  return p.brand && !["Mixed", "Best value"].includes(p.brand) ? p.brand : "DoubleTrouble Golf";
 }
 
 function esc(s) {
@@ -43,10 +50,10 @@ function productPage(p) {
   const url = `${SITE}/${slug}/`;
   const unit = p.unit || "dozen";
   const displayName = isBundle(p) ? p.name : `Used ${p.brand} ${p.name} Golf Balls`;
-  const title = `${displayName}${p.grade ? " – " + p.grade : ""} | DoubleTrouble Golf`;
+  const title = p.pageTitle || `${displayName}${p.grade ? " – " + p.grade : ""} | DoubleTrouble Golf`;
   const price = p.pricePerDozen.toFixed(2);
   const image = `${SITE}/images/products/${p.id}.jpg`;
-  const brandName = isBundle(p) ? "DoubleTrouble Golf" : p.brand;
+  const brandName = feedBrand(p);
 
   const ld = {
     "@context": "https://schema.org/",
@@ -169,7 +176,7 @@ fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemap);
 // --- feed.xml (Google Merchant Center) ---
 const items = entries
   .map(({ p, slug }) => {
-    const brand = isBundle(p) ? "DoubleTrouble Golf" : p.brand;
+    const brand = feedBrand(p);
     const titleName = isBundle(p) ? p.name : `Used ${p.brand} ${p.name} Golf Balls${p.grade ? " - " + p.grade : ""}`;
     return `    <item>
       <g:id>${esc(p.id)}</g:id>

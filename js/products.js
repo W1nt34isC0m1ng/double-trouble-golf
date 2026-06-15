@@ -1,20 +1,22 @@
 // ============================================================
 // DoubleTrouble Golf — product list
 //
-// This is YOUR file to edit! Each ball pack is one { ... } block.
+// This is YOUR file to edit! Each item is one { ... } block.
 // Fields:
 //   id            - unique nickname, lowercase-with-dashes, never repeat one
-//   brand         - must match a brand in the shop filter (Titleist, Callaway,
-//                   TaylorMade, Bridgestone, Srixon, Mixed)
-//   name          - the ball model shown on the card
-//   grade         - "Mint", "Near Mint", or "Good" (see grading guide)
-//   pricePerDozen - price in dollars for 12 balls
-//   blurb         - one fun sentence about the ball
+//   brand         - Titleist, TaylorMade, Mixed, etc. (shows on the card)
+//   name          - the product name shown on the card
+//   grade         - "Mint", "Near Mint", "Good", or "" (no badge)
+//   unit          - what one item is: "box" (a 2-dozen box) or "dozen"
+//   pricePerDozen - the price for ONE unit, in dollars
+//   blurb         - one fun sentence
 //   accent        - card stripe color (any CSS color)
-//   unit          - OPTIONAL: what one item is. Defaults to "dozen". Use "box"
-//                   for bundles (e.g. the Rescue Box = 2 dozen for one price).
-//   image         - OPTIONAL: path to a photo, e.g. "images/prov1.jpg".
-//                   Leave it out and the card shows our golf-ball drawing.
+//   image         - OPTIONAL: photo path, e.g. "images/products/prov1-2dz.jpg"
+//   slug          - OPTIONAL: SEO URL for the product page (e.g. "used-pro-v1-golf-balls")
+//   pageTitle     - OPTIONAL: SEO <title> for the product page
+//
+// After editing, run `npm run generate` to rebuild the product pages,
+// sitemap, and Google feed.
 // ============================================================
 
 const PRODUCTS = [
@@ -30,157 +32,57 @@ const PRODUCTS = [
     accent: "#caa53d",
   },
   {
-    id: "titleist-prov1-mint",
+    id: "prov1-2dz",
     brand: "Titleist",
-    name: "Pro V1",
-    grade: "Mint",
-    pricePerDozen: 23,
-    blurb: "The #1 ball in golf, fished out looking brand new.",
+    name: "Pro V1 — 2 Dozen",
+    grade: "",
+    unit: "box",
+    pricePerDozen: 50,
+    blurb:
+      "Two dozen hand-graded Titleist Pro V1s — the #1 ball in golf, in Near Mint / Mint shape. Free shipping.",
     accent: "#1b5e3b",
-    image: "images/products/titleist-prov1-mint.jpg",
+    image: "images/products/prov1-2dz.jpg",
+    slug: "used-pro-v1-golf-balls",
+    pageTitle: "Used Titleist Pro V1 Golf Balls (2 Dozen) | DoubleTrouble Golf",
   },
   {
-    id: "titleist-prov1x-near-mint",
+    id: "prov1x-2dz",
     brand: "Titleist",
-    name: "Pro V1x",
-    grade: "Near Mint",
-    pricePerDozen: 19,
-    blurb: "Tour-level spin with maybe one tiny scuff. Maybe.",
+    name: "Pro V1x — 2 Dozen",
+    grade: "",
+    unit: "box",
+    pricePerDozen: 50,
+    blurb:
+      "Two dozen hand-graded Titleist Pro V1x — higher flight, more spin, in Near Mint / Mint shape. Free shipping.",
     accent: "#0e3d25",
+    slug: "used-pro-v1x-golf-balls",
+    pageTitle: "Used Titleist Pro V1x Golf Balls (2 Dozen) | DoubleTrouble Golf",
   },
   {
-    id: "callaway-chromesoft-mint",
-    brand: "Callaway",
-    name: "Chrome Soft",
-    grade: "Mint",
-    pricePerDozen: 22,
-    blurb: "Soft feel, big distance, zero excuses.",
-    accent: "#d94f3d",
-  },
-  {
-    id: "callaway-supersoft-near-mint",
-    brand: "Callaway",
-    name: "Supersoft",
-    grade: "Near Mint",
-    pricePerDozen: 13,
-    blurb: "Easy to hit, easy on your wallet.",
-    accent: "#e8884f",
-  },
-  {
-    id: "taylormade-tp5-mint",
+    id: "tp5-2dz",
     brand: "TaylorMade",
-    name: "TP5",
-    grade: "Mint",
-    pricePerDozen: 22,
-    blurb: "Five layers of fancy. Played once, lost once, found by us.",
+    name: "TP5 / TP5x — 2 Dozen",
+    grade: "",
+    unit: "box",
+    pricePerDozen: 50,
+    blurb:
+      "Two dozen hand-graded TaylorMade TP5 & TP5x tour balls in Near Mint / Mint shape. Free shipping.",
     accent: "#2b5ea7",
+    slug: "used-taylormade-tp5-golf-balls",
+    pageTitle: "Used TaylorMade TP5 & TP5x Golf Balls (2 Dozen) | DoubleTrouble Golf",
   },
   {
-    id: "taylormade-tourresponse-near-mint",
-    brand: "TaylorMade",
-    name: "Tour Response",
-    grade: "Near Mint",
-    pricePerDozen: 15,
-    blurb: "Tour ball feel without the tour ball price.",
-    accent: "#5a8fd4",
-  },
-  {
-    id: "bridgestone-tourbxs-near-mint",
-    brand: "Bridgestone",
-    name: "Tour B XS",
-    grade: "Near Mint",
-    pricePerDozen: 17,
-    blurb: "Tiger plays this one. Now you can too, for way less.",
-    accent: "#b03030",
-  },
-  {
-    id: "srixon-zstar-mint",
-    brand: "Srixon",
-    name: "Z-Star",
-    grade: "Mint",
-    pricePerDozen: 21,
-    blurb: "A spin machine that looks fresh out of the sleeve.",
-    accent: "#caa53d",
-  },
-  {
-    id: "srixon-softfeel-good",
-    brand: "Srixon",
-    name: "Soft Feel",
-    grade: "Good",
-    pricePerDozen: 11,
-    blurb: "A few battle scars, still flies straight and true.",
-    accent: "#7a9c5e",
-  },
-  {
-    id: "mixed-premium-good",
+    id: "value-mix-2dz",
     brand: "Mixed",
-    name: "Premium Grab Bag",
-    grade: "Good",
-    pricePerDozen: 13,
-    blurb: "A dozen surprise tour balls — Pro V1s, TP5s, who knows!",
+    name: "Value Mix — 2 Dozen",
+    grade: "",
+    unit: "box",
+    pricePerDozen: 40,
+    blurb:
+      "Two dozen assorted brands (Chrome Soft, Tour B, Z-Star, Supersoft, Kirkland, Maxfli & more) in great playable shape. No sorting, all value.",
     accent: "#8a5fb0",
-  },
-  {
-    id: "mixed-practice-good",
-    brand: "Mixed",
-    name: "Practice Pack",
-    grade: "Good",
-    pricePerDozen: 10,
-    blurb: "Perfect for the range, the backyard, or that water hole.",
-    accent: "#6b7280",
-  },
-  {
-    id: "mixed-shag-near-mint",
-    brand: "Mixed",
-    name: "Mystery Dozen",
-    grade: "Near Mint",
-    pricePerDozen: 14,
-    blurb: "Twelve nice balls, twelve brands of luck. Double the fun.",
-    accent: "#3aa6a0",
-  },
-  {
-    id: "bulk-tour-50",
-    brand: "Mixed",
-    name: "50-Ball Tour Grab Bag",
-    grade: "",
-    unit: "bag",
-    pricePerDozen: 39,
-    blurb:
-      "50 premium tour balls (Pro V1, TP5, Chrome Soft & friends) in Near Mint / Good shape. A big bag for serious players.",
-    accent: "#1b5e3b",
-  },
-  {
-    id: "bulk-tour-100",
-    brand: "Mixed",
-    name: "100-Ball Tour Grab Bag",
-    grade: "",
-    unit: "bag",
-    pricePerDozen: 69,
-    blurb:
-      "100 premium tour balls in Near Mint / Good shape. Our best per-ball price on the good stuff.",
-    accent: "#0e3d25",
-  },
-  {
-    id: "bulk-assorted-50",
-    brand: "Mixed",
-    name: "50-Ball Assorted Grab Bag",
-    grade: "",
-    unit: "bag",
-    pricePerDozen: 24,
-    blurb:
-      "50 assorted-brand balls in Near Mint / Good shape. Perfect for practice or high-volume rounds.",
-    accent: "#6b7280",
-  },
-  {
-    id: "bulk-assorted-100",
-    brand: "Mixed",
-    name: "100-Ball Assorted Grab Bag",
-    grade: "",
-    unit: "bag",
-    pricePerDozen: 42,
-    blurb:
-      "100 assorted-brand balls in Near Mint / Good shape. Stock up once and never run out.",
-    accent: "#8a5fb0",
+    slug: "used-golf-balls-value-mix",
+    pageTitle: "Cheap Used Golf Balls — Value Mix, 2 Dozen | DoubleTrouble Golf",
   },
 ];
 

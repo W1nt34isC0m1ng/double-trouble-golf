@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Used Titleist Pro V1 Golf Balls (2 Dozen) | DoubleTrouble Golf</title>
+  <meta name="description" content="Two dozen hand-graded Titleist Pro V1s — the #1 ball in golf, in Near Mint / Mint shape. Free shipping.">
+  <link rel="canonical" href="https://doubletroublegolf.com/used-pro-v1-golf-balls/">
+  <meta property="og:title" content="Used Titleist Pro V1 Golf Balls (2 Dozen) | DoubleTrouble Golf">
+  <meta property="og:description" content="Two dozen hand-graded Titleist Pro V1s — the #1 ball in golf, in Near Mint / Mint shape. Free shipping.">
+  <meta property="og:image" content="https://doubletroublegolf.com/images/products/prov1-2dz.jpg">
+  <meta property="og:url" content="https://doubletroublegolf.com/used-pro-v1-golf-balls/">
+  <meta property="og:type" content="product">
+  <script type="application/ld+json">{"@context":"https://schema.org/","@type":"Product","name":"Titleist Pro V1 — 2 Dozen","description":"Two dozen hand-graded Titleist Pro V1s — the #1 ball in golf, in Near Mint / Mint shape. Free shipping.","image":"https://doubletroublegolf.com/images/products/prov1-2dz.jpg","brand":{"@type":"Brand","name":"Titleist"},"offers":{"@type":"Offer","url":"https://doubletroublegolf.com/used-pro-v1-golf-balls/","priceCurrency":"USD","price":"50.00","itemCondition":"https://schema.org/UsedCondition","availability":"https://schema.org/InStock"}}</script>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/tracking.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="/">
+      <span class="logo-balls" aria-hidden="true"><span class="logo-ball"></span><span class="logo-ball"></span></span>
+      DoubleTrouble<span class="wordmark-accent">Golf</span>
+    </a>
+  </header>
+
+  <main class="section">
+    <p class="product-crumb"><a href="/#shop">← All golf balls</a></p>
+    <div class="product-page">
+      <div class="card-art" style="--accent: #1b5e3b"><img src="/images/products/prov1-2dz.jpg" alt="Titleist Pro V1 — 2 Dozen"></div>
+      <div>
+        <p class="card-brand">Titleist</p>
+        <h1>Pro V1 — 2 Dozen</h1>
+        <p class="product-price">$50.00<small>/box</small> · free U.S. shipping</p>
+        <p>Two dozen hand-graded Titleist Pro V1s — the #1 ball in golf, in Near Mint / Mint shape. Free shipping.</p>
+        <button class="btn btn-primary" onclick="buy()">Add to cart</button>
+        <p class="product-seo">Two dozen hand-graded Titleist Pro V1s — the #1 ball in golf, in Near Mint / Mint shape. Free shipping. Every ball is recovered from local courses, washed, and hand-graded by the DoubleTrouble Golf twins, then shipped free anywhere in the continental US.</p>
+        <p><a href="/#grading">See how we grade →</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>DoubleTrouble Golf</strong> — twice the balls, half the price.</p>
+  </footer>
+
+  <script>
+    function buy() {
+      try {
+        var c = JSON.parse(localStorage.getItem("dtg-cart") || "{}");
+        if (!c || typeof c !== "object") c = {};
+        c["prov1-2dz"] = (c["prov1-2dz"] || 0) + 1;
+        localStorage.setItem("dtg-cart", JSON.stringify(c));
+        if (window.dtgTrack) window.dtgTrack("AddToCart", { value: 50, currency: "USD", content_name: "Titleist Pro V1 — 2 Dozen" });
+      } catch (e) {}
+      location.href = "/#cart";
+    }
+  </script>
+</body>
+</html>

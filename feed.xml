@@ -17,194 +17,50 @@
       <g:identifier_exists>no</g:identifier_exists>
     </item>
     <item>
-      <g:id>titleist-prov1-mint</g:id>
-      <g:title>Used Titleist Pro V1 Golf Balls - Mint</g:title>
-      <g:description>The #1 ball in golf, fished out looking brand new.</g:description>
-      <g:link>https://doubletroublegolf.com/used-titleist-pro-v1-mint/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/titleist-prov1-mint.jpg</g:image_link>
+      <g:id>prov1-2dz</g:id>
+      <g:title>Pro V1 — 2 Dozen</g:title>
+      <g:description>Two dozen hand-graded Titleist Pro V1s — the #1 ball in golf, in Near Mint / Mint shape. Free shipping.</g:description>
+      <g:link>https://doubletroublegolf.com/used-pro-v1-golf-balls/</g:link>
+      <g:image_link>https://doubletroublegolf.com/images/products/prov1-2dz.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
-      <g:price>23.00 USD</g:price>
+      <g:price>50.00 USD</g:price>
       <g:brand>Titleist</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
     <item>
-      <g:id>titleist-prov1x-near-mint</g:id>
-      <g:title>Used Titleist Pro V1x Golf Balls - Near Mint</g:title>
-      <g:description>Tour-level spin with maybe one tiny scuff. Maybe.</g:description>
-      <g:link>https://doubletroublegolf.com/used-titleist-pro-v1x-near-mint/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/titleist-prov1x-near-mint.jpg</g:image_link>
+      <g:id>prov1x-2dz</g:id>
+      <g:title>Pro V1x — 2 Dozen</g:title>
+      <g:description>Two dozen hand-graded Titleist Pro V1x — higher flight, more spin, in Near Mint / Mint shape. Free shipping.</g:description>
+      <g:link>https://doubletroublegolf.com/used-pro-v1x-golf-balls/</g:link>
+      <g:image_link>https://doubletroublegolf.com/images/products/prov1x-2dz.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
-      <g:price>19.00 USD</g:price>
+      <g:price>50.00 USD</g:price>
       <g:brand>Titleist</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
     <item>
-      <g:id>callaway-chromesoft-mint</g:id>
-      <g:title>Used Callaway Chrome Soft Golf Balls - Mint</g:title>
-      <g:description>Soft feel, big distance, zero excuses.</g:description>
-      <g:link>https://doubletroublegolf.com/used-callaway-chrome-soft-mint/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/callaway-chromesoft-mint.jpg</g:image_link>
+      <g:id>tp5-2dz</g:id>
+      <g:title>TP5 / TP5x — 2 Dozen</g:title>
+      <g:description>Two dozen hand-graded TaylorMade TP5 &amp; TP5x tour balls in Near Mint / Mint shape. Free shipping.</g:description>
+      <g:link>https://doubletroublegolf.com/used-taylormade-tp5-golf-balls/</g:link>
+      <g:image_link>https://doubletroublegolf.com/images/products/tp5-2dz.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
-      <g:price>22.00 USD</g:price>
-      <g:brand>Callaway</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>callaway-supersoft-near-mint</g:id>
-      <g:title>Used Callaway Supersoft Golf Balls - Near Mint</g:title>
-      <g:description>Easy to hit, easy on your wallet.</g:description>
-      <g:link>https://doubletroublegolf.com/used-callaway-supersoft-near-mint/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/callaway-supersoft-near-mint.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>13.00 USD</g:price>
-      <g:brand>Callaway</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>taylormade-tp5-mint</g:id>
-      <g:title>Used TaylorMade TP5 Golf Balls - Mint</g:title>
-      <g:description>Five layers of fancy. Played once, lost once, found by us.</g:description>
-      <g:link>https://doubletroublegolf.com/used-taylormade-tp5-mint/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/taylormade-tp5-mint.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>22.00 USD</g:price>
+      <g:price>50.00 USD</g:price>
       <g:brand>TaylorMade</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
     <item>
-      <g:id>taylormade-tourresponse-near-mint</g:id>
-      <g:title>Used TaylorMade Tour Response Golf Balls - Near Mint</g:title>
-      <g:description>Tour ball feel without the tour ball price.</g:description>
-      <g:link>https://doubletroublegolf.com/used-taylormade-tour-response-near-mint/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/taylormade-tourresponse-near-mint.jpg</g:image_link>
+      <g:id>value-mix-2dz</g:id>
+      <g:title>Value Mix — 2 Dozen</g:title>
+      <g:description>Two dozen assorted brands (Chrome Soft, Tour B, Z-Star, Supersoft, Kirkland, Maxfli &amp; more) in great playable shape. No sorting, all value.</g:description>
+      <g:link>https://doubletroublegolf.com/used-golf-balls-value-mix/</g:link>
+      <g:image_link>https://doubletroublegolf.com/images/products/value-mix-2dz.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
-      <g:price>15.00 USD</g:price>
-      <g:brand>TaylorMade</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>bridgestone-tourbxs-near-mint</g:id>
-      <g:title>Used Bridgestone Tour B XS Golf Balls - Near Mint</g:title>
-      <g:description>Tiger plays this one. Now you can too, for way less.</g:description>
-      <g:link>https://doubletroublegolf.com/used-bridgestone-tour-b-xs-near-mint/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/bridgestone-tourbxs-near-mint.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>17.00 USD</g:price>
-      <g:brand>Bridgestone</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>srixon-zstar-mint</g:id>
-      <g:title>Used Srixon Z-Star Golf Balls - Mint</g:title>
-      <g:description>A spin machine that looks fresh out of the sleeve.</g:description>
-      <g:link>https://doubletroublegolf.com/used-srixon-z-star-mint/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/srixon-zstar-mint.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>21.00 USD</g:price>
-      <g:brand>Srixon</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>srixon-softfeel-good</g:id>
-      <g:title>Used Srixon Soft Feel Golf Balls - Good</g:title>
-      <g:description>A few battle scars, still flies straight and true.</g:description>
-      <g:link>https://doubletroublegolf.com/used-srixon-soft-feel-good/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/srixon-softfeel-good.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>11.00 USD</g:price>
-      <g:brand>Srixon</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>mixed-premium-good</g:id>
-      <g:title>Used Mixed Premium Grab Bag Golf Balls - Good</g:title>
-      <g:description>A dozen surprise tour balls — Pro V1s, TP5s, who knows!</g:description>
-      <g:link>https://doubletroublegolf.com/used-mixed-premium-grab-bag-good/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/mixed-premium-good.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>13.00 USD</g:price>
-      <g:brand>Mixed</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>mixed-practice-good</g:id>
-      <g:title>Used Mixed Practice Pack Golf Balls - Good</g:title>
-      <g:description>Perfect for the range, the backyard, or that water hole.</g:description>
-      <g:link>https://doubletroublegolf.com/used-mixed-practice-pack-good/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/mixed-practice-good.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>10.00 USD</g:price>
-      <g:brand>Mixed</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>mixed-shag-near-mint</g:id>
-      <g:title>Used Mixed Mystery Dozen Golf Balls - Near Mint</g:title>
-      <g:description>Twelve nice balls, twelve brands of luck. Double the fun.</g:description>
-      <g:link>https://doubletroublegolf.com/used-mixed-mystery-dozen-near-mint/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/mixed-shag-near-mint.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>14.00 USD</g:price>
-      <g:brand>Mixed</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>bulk-tour-50</g:id>
-      <g:title>50-Ball Tour Grab Bag</g:title>
-      <g:description>50 premium tour balls (Pro V1, TP5, Chrome Soft &amp; friends) in Near Mint / Good shape. A big bag for serious players.</g:description>
-      <g:link>https://doubletroublegolf.com/50-ball-tour-grab-bag/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/bulk-tour-50.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>39.00 USD</g:price>
-      <g:brand>DoubleTrouble Golf</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>bulk-tour-100</g:id>
-      <g:title>100-Ball Tour Grab Bag</g:title>
-      <g:description>100 premium tour balls in Near Mint / Good shape. Our best per-ball price on the good stuff.</g:description>
-      <g:link>https://doubletroublegolf.com/100-ball-tour-grab-bag/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/bulk-tour-100.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>69.00 USD</g:price>
-      <g:brand>DoubleTrouble Golf</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>bulk-assorted-50</g:id>
-      <g:title>50-Ball Assorted Grab Bag</g:title>
-      <g:description>50 assorted-brand balls in Near Mint / Good shape. Perfect for practice or high-volume rounds.</g:description>
-      <g:link>https://doubletroublegolf.com/50-ball-assorted-grab-bag/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/bulk-assorted-50.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>24.00 USD</g:price>
-      <g:brand>DoubleTrouble Golf</g:brand>
-      <g:identifier_exists>no</g:identifier_exists>
-    </item>
-    <item>
-      <g:id>bulk-assorted-100</g:id>
-      <g:title>100-Ball Assorted Grab Bag</g:title>
-      <g:description>100 assorted-brand balls in Near Mint / Good shape. Stock up once and never run out.</g:description>
-      <g:link>https://doubletroublegolf.com/100-ball-assorted-grab-bag/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/bulk-assorted-100.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:condition>used</g:condition>
-      <g:price>42.00 USD</g:price>
+      <g:price>40.00 USD</g:price>
       <g:brand>DoubleTrouble Golf</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
