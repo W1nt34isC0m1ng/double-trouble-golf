@@ -68,6 +68,7 @@ const PRODUCTS = [
     blurb:
       "Two dozen hand-graded TaylorMade TP5 & TP5x tour balls in Near Mint / Mint shape. Free shipping.",
     accent: "#2b5ea7",
+    image: "images/products/tp5-2dz.jpg",
     slug: "used-taylormade-tp5-golf-balls",
     pageTitle: "Used TaylorMade TP5 & TP5x Golf Balls (2 Dozen) | DoubleTrouble Golf",
   },
@@ -81,6 +82,7 @@ const PRODUCTS = [
     blurb:
       "Two dozen assorted brands (Chrome Soft, Tour B, Z-Star, Supersoft, Kirkland, Maxfli & more) in great playable shape. No sorting, all value.",
     accent: "#8a5fb0",
+    image: "images/products/value-mix-2dz.jpg",
     slug: "used-golf-balls-value-mix",
     pageTitle: "Cheap Used Golf Balls — Value Mix, 2 Dozen | DoubleTrouble Golf",
   },
