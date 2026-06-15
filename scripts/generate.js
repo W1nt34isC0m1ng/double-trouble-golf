@@ -161,7 +161,12 @@ for (const { p, slug } of entries) {
 
 // --- sitemap.xml ---
 // Hand-built static pages (not generated from products) that should be indexed.
-const STATIC_PAGES = ["rescue-drop"];
+const STATIC_PAGES = [
+  "rescue-drop",
+  "guides",
+  "guides/are-used-golf-balls-as-good-as-new",
+  "guides/pro-v1-vs-pro-v1x",
+];
 const urls = [
   `${SITE}/`,
   ...STATIC_PAGES.map((s) => `${SITE}/${s}/`),

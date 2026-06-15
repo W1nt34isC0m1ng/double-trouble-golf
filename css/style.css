@@ -688,6 +688,23 @@ h1, h2, h3 { line-height: 1.15; }
   box-shadow: var(--shadow);
 }
 
+.article { max-width: 44rem; }
+.article h1 { color: var(--green-dark); font-size: 2rem; margin: 0.3rem 0 1rem; }
+.article h2 { color: var(--green-dark); font-size: 1.25rem; margin: 1.8rem 0 0.5rem; }
+.article p, .article li { color: var(--ink); line-height: 1.7; }
+.article ul { padding-left: 1.2rem; }
+.article li { margin-bottom: 0.4rem; }
+.article .btn { margin-top: 0.8rem; }
+
+.guide-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.guide-list li {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #e3dcc8;
+}
+.guide-list a { color: var(--green-dark); font-size: 1.15rem; text-decoration: none; }
+.guide-list a:hover { text-decoration: underline; }
+.guide-list p { margin: 0.3rem 0 0; color: #4c5a51; font-size: 0.95rem; }
+
 .product-crumb { margin: 0 0 1.5rem; }
 .product-crumb a { color: var(--green); text-decoration: none; font-weight: 600; }
 
