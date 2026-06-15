@@ -52,7 +52,7 @@ function productPage(p) {
   const displayName = isBundle(p) ? p.name : `Used ${p.brand} ${p.name} Golf Balls`;
   const title = p.pageTitle || `${displayName}${p.grade ? " – " + p.grade : ""} | DoubleTrouble Golf`;
   const price = p.pricePerDozen.toFixed(2);
-  const image = `${SITE}/images/products/${p.id}.jpg`;
+  const image = `${SITE}/${p.image || `images/products/${p.id}.jpg`}`;
   const brandName = feedBrand(p);
 
   const ld = {
@@ -183,7 +183,7 @@ const items = entries
       <g:title>${esc(titleName)}</g:title>
       <g:description>${esc(p.blurb)}</g:description>
       <g:link>${SITE}/${slug}/</g:link>
-      <g:image_link>${SITE}/images/products/${esc(p.id)}.jpg</g:image_link>
+      <g:image_link>${SITE}/${esc(p.image || `images/products/${p.id}.jpg`)}</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
       <g:price>${p.pricePerDozen.toFixed(2)} USD</g:price>

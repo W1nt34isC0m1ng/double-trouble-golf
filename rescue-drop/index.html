@@ -33,10 +33,10 @@
         <div class="hero-content">
           <p class="hero-kicker">New drop every week</p>
           <h1>The Weekly<br>Rescue Drop</h1>
-          <p class="hero-sub">Every week we hunt the ponds and woods, haul out the lost balls, wash and hand-grade every one, then drop the best as a fresh <strong>Rescue Box</strong> — 2 dozen premium balls for <strong>$29, shipped free.</strong> When they're gone, they're gone.</p>
+          <p class="hero-sub">Every week we hunt the ponds and woods, haul out the lost balls, wash and hand-grade every one, then drop the best as a fresh <strong>Rescue Box</strong> — 3 dozen premium balls for <strong>$39, shipped free.</strong> When they're gone, they're gone.</p>
           <p id="ref-applied" class="ref-applied" hidden></p>
           <div class="hero-cta">
-            <button class="btn btn-primary" onclick="buy()">Grab this week's Rescue Box — $29</button>
+            <button class="btn btn-primary" onclick="buy()">Grab this week's Rescue Box — $39</button>
             <a class="hero-link" href="/#shop">or shop all balls →</a>
           </div>
         </div>
@@ -88,7 +88,7 @@
         if (!c || typeof c !== "object") c = {};
         c["rescue-box"] = (c["rescue-box"] || 0) + 1;
         localStorage.setItem("dtg-cart", JSON.stringify(c));
-        if (window.dtgTrack) window.dtgTrack("AddToCart", { value: 29, currency: "USD", content_name: "The Rescue Box" });
+        if (window.dtgTrack) window.dtgTrack("AddToCart", { value: 39, currency: "USD", content_name: "The Rescue Box" });
       } catch (e) {}
       location.href = "/#cart";
     }

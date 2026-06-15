@@ -26,10 +26,11 @@ const PRODUCTS = [
     name: "The Rescue Box",
     grade: "",
     unit: "box",
-    pricePerDozen: 29,
+    pricePerDozen: 39,
     blurb:
-      "This week's Rescue Drop: 2 dozen hand-graded premium balls (Pro V1, TP5, Chrome Soft & more), shipped free.",
+      "This week's Rescue Drop: 3 dozen hand-graded premium balls (Pro V1, TP5, Chrome Soft & more), shipped free.",
     accent: "#caa53d",
+    image: "images/trouble-club.jpg",
   },
   {
     id: "prov1-2dz",
@@ -37,7 +38,7 @@ const PRODUCTS = [
     name: "Pro V1 — 2 Dozen",
     grade: "",
     unit: "box",
-    pricePerDozen: 50,
+    pricePerDozen: 40,
     blurb:
       "Two dozen hand-graded Titleist Pro V1s — the #1 ball in golf, in Near Mint / Mint shape. Free shipping.",
     accent: "#1b5e3b",
@@ -51,7 +52,7 @@ const PRODUCTS = [
     name: "Pro V1x — 2 Dozen",
     grade: "",
     unit: "box",
-    pricePerDozen: 50,
+    pricePerDozen: 40,
     blurb:
       "Two dozen hand-graded Titleist Pro V1x — higher flight, more spin, in Near Mint / Mint shape. Free shipping.",
     accent: "#0e3d25",
@@ -65,7 +66,7 @@ const PRODUCTS = [
     name: "TP5 / TP5x — 2 Dozen",
     grade: "",
     unit: "box",
-    pricePerDozen: 50,
+    pricePerDozen: 40,
     blurb:
       "Two dozen hand-graded TaylorMade TP5 & TP5x tour balls in Near Mint / Mint shape. Free shipping.",
     accent: "#2b5ea7",
@@ -79,7 +80,7 @@ const PRODUCTS = [
     name: "Value Mix — 2 Dozen",
     grade: "",
     unit: "box",
-    pricePerDozen: 40,
+    pricePerDozen: 30,
     blurb:
       "Two dozen assorted brands (Chrome Soft, Tour B, Z-Star, Supersoft, Kirkland, Maxfli & more) in great playable shape. No sorting, all value.",
     accent: "#8a5fb0",

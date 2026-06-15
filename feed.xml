@@ -7,12 +7,12 @@
     <item>
       <g:id>rescue-box</g:id>
       <g:title>The Rescue Box</g:title>
-      <g:description>This week's Rescue Drop: 2 dozen hand-graded premium balls (Pro V1, TP5, Chrome Soft &amp; more), shipped free.</g:description>
+      <g:description>This week's Rescue Drop: 3 dozen hand-graded premium balls (Pro V1, TP5, Chrome Soft &amp; more), shipped free.</g:description>
       <g:link>https://doubletroublegolf.com/the-rescue-box/</g:link>
-      <g:image_link>https://doubletroublegolf.com/images/products/rescue-box.jpg</g:image_link>
+      <g:image_link>https://doubletroublegolf.com/images/trouble-club.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
-      <g:price>29.00 USD</g:price>
+      <g:price>39.00 USD</g:price>
       <g:brand>DoubleTrouble Golf</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
@@ -24,7 +24,7 @@
       <g:image_link>https://doubletroublegolf.com/images/products/prov1-2dz.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
-      <g:price>50.00 USD</g:price>
+      <g:price>40.00 USD</g:price>
       <g:brand>Titleist</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
@@ -36,7 +36,7 @@
       <g:image_link>https://doubletroublegolf.com/images/products/prov1x-2dz.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
-      <g:price>50.00 USD</g:price>
+      <g:price>40.00 USD</g:price>
       <g:brand>Titleist</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
@@ -48,7 +48,7 @@
       <g:image_link>https://doubletroublegolf.com/images/products/tp5-2dz.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
-      <g:price>50.00 USD</g:price>
+      <g:price>40.00 USD</g:price>
       <g:brand>TaylorMade</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
@@ -60,7 +60,7 @@
       <g:image_link>https://doubletroublegolf.com/images/products/value-mix-2dz.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:condition>used</g:condition>
-      <g:price>40.00 USD</g:price>
+      <g:price>30.00 USD</g:price>
       <g:brand>DoubleTrouble Golf</g:brand>
       <g:identifier_exists>no</g:identifier_exists>
     </item>
