@@ -596,7 +596,30 @@ h1, h2, h3 { line-height: 1.15; }
 
 .cart-note { margin: 0.7rem 0 0; font-size: 0.8rem; color: #6a7a6f; }
 
+.club-layout {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.club-photo {
+  width: 42%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .club-layout { flex-direction: column; }
+  .club-photo { width: 100%; max-width: 360px; }
+}
+
 .club-card {
+  flex: 1;
   max-width: 38rem;
   margin: 0 auto;
   text-align: center;
