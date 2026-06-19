@@ -12,6 +12,7 @@
 
 const META_PIXEL_ID = "981511503085110";       // e.g. "1234567890123456"
 const CLOUDFLARE_TOKEN = "53d44f33ef14473fb54aeb4dd918498b";     // e.g. "a1b2c3d4e5f6..."
+const GA_MEASUREMENT_ID = "G-FCX2GCYWEL";  // Google Analytics 4 — analytics.google.com → Admin → Data Streams
 
 // ---- Meta Pixel (page views on every page) ----
 if (META_PIXEL_ID) {
@@ -33,6 +34,18 @@ if (META_PIXEL_ID) {
   })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
   fbq("init", META_PIXEL_ID);
   fbq("track", "PageView");
+}
+
+// ---- Google Analytics 4 (page paths, new vs returning, funnels) ----
+if (GA_MEASUREMENT_ID) {
+  var ga = document.createElement("script");
+  ga.async = true;
+  ga.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+  document.head.appendChild(ga);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag("js", new Date());
+  gtag("config", GA_MEASUREMENT_ID);
 }
 
 // ---- Cloudflare Web Analytics (free traffic counter) ----
@@ -70,10 +83,21 @@ window.dtgGetRef = function () {
 
 // ---- Helpers: fire Meta standard events. Safe no-op when the pixel is off. ----
 
+// Map Meta's event names to GA4's standard ecommerce event names.
+const GA_EVENT_MAP = {
+  AddToCart: "add_to_cart",
+  InitiateCheckout: "begin_checkout",
+  Subscribe: "subscribe",
+  Purchase: "purchase",
+};
+
 // Generic: AddToCart, InitiateCheckout, etc. (used by app.js)
 window.dtgTrack = function (eventName, params) {
   if (META_PIXEL_ID && window.fbq) {
     fbq("track", eventName, params || {});
+  }
+  if (GA_MEASUREMENT_ID && window.gtag) {
+    gtag("event", GA_EVENT_MAP[eventName] || eventName, params || {});
   }
 };
 
@@ -81,5 +105,8 @@ window.dtgTrack = function (eventName, params) {
 window.dtgTrackPurchase = function (value, currency) {
   if (META_PIXEL_ID && window.fbq) {
     fbq("track", "Purchase", { value: value, currency: currency || "USD" });
+  }
+  if (GA_MEASUREMENT_ID && window.gtag) {
+    gtag("event", "purchase", { value: value, currency: currency || "USD" });
   }
 };
